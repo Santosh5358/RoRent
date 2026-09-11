@@ -23,9 +23,9 @@ declare global {
 }
 
 // Fallback used by the native app when no server URL has been configured yet.
-// This is a local-network address; for sharing with others, configure a public
-// URL in the app (login screen → Server settings) or via window.__API_BASE_URL__.
-const DEFAULT_NATIVE_API = 'http://192.168.1.19:8081';
+// This is now the public Render backend; users can still override via login screen
+// (Server settings) or window.__API_BASE_URL__ to point at a different backend.
+const DEFAULT_NATIVE_API = 'https://rorent.onrender.com';
 
 const STORAGE_KEY = 'roomrent.apiBaseUrl';
 
