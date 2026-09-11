@@ -1,0 +1,33 @@
+# Render Blueprint — deploys the Room Rent backend as a free, always-on public URL.
+#
+# How to use:
+#   1. Push this project to a GitHub repo.
+#   2. Go to https://dashboard.render.com → New → Blueprint → pick your repo.
+#   3. When prompted, set the MONGODB_URI value (your MongoDB Atlas connection
+#      string). Optionally set JWT_SECRET to any random string >= 32 chars.
+#   4. Deploy. Render gives you a URL like https://room-rent-backend.onrender.com
+#   5. In the mobile app: Login screen → Server settings → paste that URL.
+#
+# Notes:
+#   - In MongoDB Atlas → Network Access, allow access from anywhere (0.0.0.0/0)
+#     so Render can connect (or add Render's outbound IPs).
+#   - The free plan sleeps after inactivity; the first request may take ~30s.
+#   - Uploaded images (slips/meter photos) are stored on the container's disk,
+#     which is ephemeral on the free plan and cleared on redeplo/restart.
+services:
+  - type: web
+    name: room-rent-backend
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      # Paste your MongoDB Atlas connection string in the Render dashboard.
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: roomrent
+      # Optional: set a strong secret; if omitted the app uses a built-in default.
+      - key: JWT_SECRET
+        sync: false

@@ -1,0 +1,10 @@
+# Ignore build output and local artifacts when building the Docker image
+target/
+*.db
+*.db-wal
+*.db-shm
+uploads/
+run.log
+build.log
+.idea/
+*.iml

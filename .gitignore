@@ -1,0 +1,79 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+target/
+*.jar
+*.war
+
+# Frontend
+frontend/dist/
+frontend/node_modules/
+frontend/.angular/
+
+# Android
+frontend/android/app/build/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/gradlew
+frontend/android/gradlew.bat
+
+# Backend
+backend/target/
+backend/*.log
+backend/run.log
+backend/build.log
+backend/apk*.log
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+roomrent.db*
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+.env*.yaml
+.env*.yml
+
+# Uploaded files
+uploads/
+public/uploads/
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Temporary
+*.tmp
+*.temp
+*.bak
+*backup*
+
+# Maven
+.m2/
+
+# Capacitor/Cordova
+frontend/android/app/src/main/assets/public/

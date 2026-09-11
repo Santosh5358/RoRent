@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Development convenience: allow plain HTTP so the native app can reach the
+  Spring Boot backend during development, e.g. the Android emulator host
+  (http://10.0.2.2:8081) or a LAN IP. Tighten or remove before shipping a
+  production build that talks to an HTTPS backend.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
